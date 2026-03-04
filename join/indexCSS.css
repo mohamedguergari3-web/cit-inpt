@@ -1,0 +1,145 @@
+/* GENERAL */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f4c75, #3282b8);
+    padding: 30px;
+    margin: 0;
+}
+
+/* HEADER & FOOTER */
+header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #e0e0e0;
+}
+
+/* FORM CONTAINER */
+form {
+    background: #ffffff;
+    padding: 25px;
+    max-width: 750px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* FIELDSETS */
+fieldset {
+    border: 2px solid #3282b8;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #0f4c75;
+}
+
+/* LABELS */
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* RADIO & CHECKBOX */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+/* FOCUS EFFECT */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #3282b8;
+    box-shadow: 0 0 6px rgba(50, 130, 184, 0.6);
+    outline: none;
+}
+
+/* RANGE */
+input[type="range"] {
+    accent-color: #0f4c75;
+}
+
+/* TERMS */
+.terms {
+    background: #f1f8ff;
+    padding: 10px;
+    border-left: 5px solid #3282b8;
+    margin: 15px 0;
+}
+
+/* BUTTONS */
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+/* SUBMIT */
+button[type="submit"] {
+    background: #0f4c75;
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background: #3282b8;
+    transform: scale(1.05);
+}
+
+/* RESET */
+button[type="reset"] {
+    background: #e0e0e0;
+    color: #333;
+}
+
+button[type="reset"]:hover {
+    background: #bdbdbd;
+}
+
+/* OUTPUT MESSAGE */
+output {
+    display: block;
+    margin-top: 20px;
+    padding: 12px;
+    background: #e8f5e9;
+    border-left: 5px solid #2e7d32;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+#photoPreview {
+    display: none;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #3282b8;
+}

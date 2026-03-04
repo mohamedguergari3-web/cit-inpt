@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="CIT INPT — Club Informatique & Télécom. Algorithme, Data, DevOps, CyberSécurité, Web, Design, Sponsoring, Events." />
+    <title>CIT INPT — Club Informatique &amp; Télécom</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="site.css" />
+    <script src="site.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ── Grain noise overlay ─────────────────────────────────────────── -->
+    <div class="noise-overlay"></div>
+
+    <!-- ── Custom cursor ──────────────────────────────────────────────── -->
+    <div class="cur-dot"></div>
+    <div class="cur-ring"></div>
+
+    <!-- ── Scroll progress ────────────────────────────────────────────── -->
+    <div id="progress-bar"></div>
+
+    <!-- ── Starfield canvas ───────────────────────────────────────────── -->
+    <canvas id="starfield"></canvas>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     NAVBAR
+     ══════════════════════════════════════════════════════════════════ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-inner">
+
+                <!-- Logo -->
+                <a href="#hero" class="nav-logo">
+                    <div class="logo-icon">
+                        <!-- CIT SVG mark (simplified bracket-C) -->
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5L4 12L8 19" stroke="#00f5d4" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M16 5L20 12L16 19" stroke="#0066ff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="2" fill="#00f5d4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="logo-text">CIT <span>INPT</span></div>
+                        <div class="logo-sub">Club Informatique &amp; Télécom</div>
+                    </div>
+                </a>
+
+                <!-- Hamburger -->
+                <button class="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="nav-links">
+                    <li><a href="#hero" data-index="00">Home</a></li>
+                    <li><a href="#about" data-index="01">À propos</a></li>
+                    <li><a href="#cells" data-index="02">Cellules</a></li>
+                    <li><a href="#events" data-index="03">Events</a></li>
+                    <li><a href="#team" data-index="04">Team</a></li>
+                    <li><a href="#contact" data-index="05">Contact</a></li>
+                    <li><a href="join/index.html" class="btn-join">Rejoindre</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════════════════ -->
+    <section id="hero">
+        <!-- bg layers -->
+        <div style="position:absolute;inset:0;z-index:1;pointer-events:none;">
+            <div class="hero-bg-grid"
+                style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,212,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,212,.035) 1px,transparent 1px);background-size:75px 75px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- ── LEFT ── -->
+                <div>
+                    <div class="hero-eyebrow reveal">
+                        <span class="eyebrow-dot"></span>
+                        INPT Rabat &nbsp;·&nbsp; Depuis 2014
+                    </div>
+
+                    <h1 class="hero-h1 reveal d1">
+                        Club<br>
+                        <em><span class="glitch" data-g="CIT">CIT</span></em><br>
+                        INPT
+                    </h1>
+
+                    <p class="hero-desc reveal d2">
+                        Empowering Student Skills in IT — Competitive Programming,
+                        Ethical Hacking, Data Science, DevOps &amp; Web Dev.
+                        <br>On construit. On brise. On innove.
+                    </p>
+
+                    <div class="hero-actions reveal d3">
+                        <a href="#cells" class="cta-primary">
+                            <i class="bi bi-grid-3x3-gap-fill"></i> Nos Cellules
+                        </a>
+                        <a href="join/index.html" class="cta-ghost">
+                            <i class="bi bi-arrow-right-circle"></i> Rejoindre
+                        </a>
+                    </div>
+
+                    <div class="hero-stats reveal d4">
+                        <div class="hero-stat">
+                            <div class="stat-val" data-count="8" data-suffix=""><span>0</span></div>
+                            <div class="stat-key">Cellules</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-val" data-count="3144" data-suffix="+"><span>0+</span></div>
+                            <div class="stat-key">Followers IG</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-val" data-count="7100" data-suffix="+"><span>0+</span></div>
+                            <div class="stat-key">Followers FB</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-val" data-count="477" data-suffix=""><span>0</span></div>
+                            <div class="stat-key">Posts Instagram</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── RIGHT — Holo terminal card ── -->
+                <div class="hero-card reveal d2">
+                    <div class="holo-card">
+                        <div class="card-header">
+                            <div class="win-dots">
+                                <div class="wd r"></div>
+                                <div class="wd y"></div>
+                                <div class="wd g"></div>
+                            </div>
+                            <div class="card-title">~/cit-inpt/core.ts</div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="tl"><span class="tp">$</span><span class="t-type" data-t="cat club.json"></span>
+                            </div>
+                            <div class="tb"></div>
+                            <div class="tl"><span class="kw">const</span>&nbsp;<span class="fn">CIT</span>&nbsp;= {
+                            </div>
+                            <div class="tl">&nbsp;&nbsp;name:&nbsp;<span class="str">"Club Informatique &
+                                    Télécom"</span>,</div>
+                            <div class="tl">&nbsp;&nbsp;founded:&nbsp;<span class="num">2014</span>,</div>
+                            <div class="tl">&nbsp;&nbsp;location:&nbsp;<span class="str">"INPT, Rabat"</span>,</div>
+                            <div class="tl">&nbsp;&nbsp;email:&nbsp;<span class="str">"cit.inpt@gmail.com"</span>,</div>
+                            <div class="tl">&nbsp;&nbsp;cells:&nbsp;<span class="num">8</span>,&nbsp;<span class="cm">//
+                                    see /cells</span></div>
+                            <div class="tl">&nbsp;&nbsp;ig_followers:&nbsp;<span class="num">3144</span>,</div>
+                            <div class="tl">&nbsp;&nbsp;fb_followers:&nbsp;<span class="num">7100</span>,</div>
+                            <div class="tl">&nbsp;&nbsp;mission:&nbsp;<span class="str">"Empowering IT Skills"</span>
+                            </div>
+                            <div class="tl">};</div>
+                            <div class="tb"></div>
+                            <div class="tl">
+                                <span class="tp">$</span>
+                                <span class="t-type" data-t="cit --join --cell=?"></span>
+                                <span class="tcur"></span>
+                            </div>
+                            <div class="tl"><span class="ok">✓ Ready. Pick your cell &amp; build.</span></div>
+                        </div>
+
+                        <div class="card-chips">
+                            <span class="chip">Algorithme</span>
+                            <span class="chip">Data</span>
+                            <span class="chip">DevOps</span>
+                            <span class="chip">CyberSécu</span>
+                            <span class="chip">Web</span>
+                            <span class="chip">Design</span>
+                            <span class="chip">Sponsoring</span>
+                            <span class="chip">Events</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     ABOUT
+     ══════════════════════════════════════════════════════════════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-wrap">
+
+                <!-- Left text -->
+                <div class="about-left">
+                    <span class="s-kicker reveal">À propos du CIT</span>
+                    <h2 class="s-title reveal d1">Le club IT<br>de <span class="acc">l'INPT</span></h2>
+                    <div class="s-line reveal d1"></div>
+
+                    <p class="about-body reveal d2">
+                        Le <strong>Club Informatique &amp; Télécom (CIT)</strong> de l'INPT réunit
+                        les étudiants passionnés par les technologies de l'information depuis <strong>2014</strong>.
+                        On organise des événements compétitifs, des formations et des hackathons.
+                    </p>
+                    <p class="about-body reveal d3">
+                        Avec <strong>3,1K+ followers Instagram</strong> et <strong>7,1K+ sur Facebook</strong>,
+                        le CIT est l'une des communautés tech les plus actives du Maroc académique.
+                        Notre flagship event <strong>IDEH</strong> (Inter-INPT Data &amp; Ethical Hacking)
+                        attire des participants de toutes les grandes écoles du pays.
+                    </p>
+
+                    <div class="about-tags reveal d4">
+                        <span class="atag">IDEH CTF</span>
+                        <span class="atag">T2D</span>
+                        <span class="atag">ICPC</span>
+                        <span class="atag">Ramada League</span>
+                        <span class="atag">Integration</span>
+                        <span class="atag">Formations</span>
+                        <span class="atag">Open Source</span>
+                        <span class="atag">CP</span>
+                        <span class="atag">Pentesting</span>
+                    </div>
+
+                    <!-- Real social links -->
+                    <div class="social-row reveal d5">
+                        <a class="social-pill" href="https://www.instagram.com/cit.inpt/" target="_blank"
+                            rel="noopener">
+                            <span class="sp-icon"><i class="bi bi-instagram"></i></span>
+                            <div>
+                                <div>@cit.inpt</div>
+                                <div class="sp-count">3,144 followers</div>
+                            </div>
+                        </a>
+                        <a class="social-pill" href="https://www.facebook.com/CIT.INPT?locale=fr_FR" target="_blank"
+                            rel="noopener">
+                            <span class="sp-icon"><i class="bi bi-facebook"></i></span>
+                            <div>
+                                <div>CIT — INPT</div>
+                                <div class="sp-count">7,1K followers</div>
+                            </div>
+                        </a>
+                        <a class="social-pill" href="https://www.linkedin.com/company/cit-inpt/?originalSubdomain=ma"
+                            target="_blank" rel="noopener">
+                            <span class="sp-icon"><i class="bi bi-linkedin"></i></span>
+                            <div>
+                                <div>CIT INPT</div>
+                                <div class="sp-count">LinkedIn</div>
+                            </div>
+                        </a>
+                        <a class="social-pill" href="mailto:cit.inpt@gmail.com">
+                            <span class="sp-icon"><i class="bi bi-envelope"></i></span>
+                            <div>
+                                <div>cit.inpt@gmail.com</div>
+                                <div class="sp-count">Répondons vite</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right mini cards -->
+                <div class="about-cards">
+                    <div class="acard reveal d1" style="--ac-grad:linear-gradient(90deg,#00f5d4,#0066ff)">
+                        <span class="acard-ico">⚡</span>
+                        <h4>Mission</h4>
+                        <p>Former les ingénieurs IT de demain via des projets concrets, challenges et mentorat.</p>
+                    </div>
+                    <div class="acard reveal d2" style="--ac-grad:linear-gradient(90deg,#f72585,#ffd60a)">
+                        <span class="acard-ico">🏆</span>
+                        <h4>Compétitions</h4>
+                        <p>IDEH (CTF flagship), ICPC, Ramada League CP+CTF+Data. On joue pour gagner.</p>
+                    </div>
+                    <div class="acard reveal d3" style="--ac-grad:linear-gradient(90deg,#6366f1,#a78bfa)">
+                        <span class="acard-ico">🌐</span>
+                        <h4>Communauté</h4>
+                        <p>10K+ followers cumulés, alumni en entreprise, réseau actif de partenaires tech.</p>
+                    </div>
+                    <div class="acard reveal d4" style="--ac-grad:linear-gradient(90deg,#06d6a0,#00f5d4)">
+                        <span class="acard-ico">🚀</span>
+                        <h4>Carrière</h4>
+                        <p>Stages via nos sponsors, portfolio de projets réels, lettres de recommandation.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     CELLS
+     ══════════════════════════════════════════════════════════════════ -->
+    <section id="cells">
+        <div class="container">
+            <div class="s-head">
+                <span class="s-kicker reveal">Spécialisations</span>
+                <h2 class="s-title reveal d1">Nos <span class="acc">8 Cellules</span></h2>
+                <div class="s-line reveal d1"></div>
+                <p class="s-desc reveal d2">
+                    Huit cellules d'excellence. Chaque membre choisit sa passion et s'y implique à fond.
+                </p>
+            </div>
+
+            <div class="cells-grid">
+
+                <!-- 1. Algorithme -->
+                <div class="cell c-algo reveal d1">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-braces"></i></div>
+                        <h3>Algorithme</h3>
+                        <p>Algorithmique compétitive, structures de données, prépa ICPC &amp; Ramada League CP.</p>
+                        <div class="cell-tags">
+                            <span class="ctag">ICPC</span><span class="ctag">C++</span>
+                            <span class="ctag">DP</span><span class="ctag">Graphes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Data -->
+                <div class="cell c-data reveal d2">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-bar-chart-steps"></i></div>
+                        <h3>Data</h3>
+                        <p>Data science, ML, pipelines big data et challenges analytiques (Ramada League Data).</p>
+                        <div class="cell-tags">
+                            <span class="ctag">Python</span><span class="ctag">ML</span>
+                            <span class="ctag">Spark</span><span class="ctag">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DevOps -->
+                <div class="cell c-devops reveal d3">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                        <h3>DevOps</h3>
+                        <p>CI/CD, conteneurs Docker &amp; Kubernetes, cloud AWS/Azure, infrastructure as code.</p>
+                        <div class="cell-tags">
+                            <span class="ctag">Docker</span><span class="ctag">K8s</span>
+                            <span class="ctag">CI/CD</span><span class="ctag">Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. CyberSécurité -->
+                <div class="cell c-cyber reveal d4">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h3>CyberSécurité</h3>
+                        <p>CTF authoring &amp; solving (IDEH), pentesting, OSINT, forensics, reverse engineering.</p>
+                        <div class="cell-tags">
+                            <span class="ctag">CTF</span><span class="ctag">Pentesting</span>
+                            <span class="ctag">OSINT</span><span class="ctag">IDEH</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Développement Web -->
+                <div class="cell c-web reveal d5">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-code-slash"></i></div>
+                        <h3>Développement Web</h3>
+                        <p>Apps fullstack, APIs, React/Next.js, Node.js. Sprint de dev &amp; projets internes du club.
+                        </p>
+                        <div class="cell-tags">
+                            <span class="ctag">React</span><span class="ctag">Node.js</span>
+                            <span class="ctag">TypeScript</span><span class="ctag">API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Design -->
+                <div class="cell c-design reveal d6">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-palette"></i></div>
+                        <h3>Design</h3>
+                        <p>Identité visuelle du club, créations pour les events, UI/UX et motion design.</p>
+                        <div class="cell-tags">
+                            <span class="ctag">Figma</span><span class="ctag">Illustrator</span>
+                            <span class="ctag">UI/UX</span><span class="ctag">Motion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Sponsoring -->
+                <div class="cell c-spon reveal d7">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-briefcase"></i></div>
+                        <h3>Sponsoring</h3>
+                        <p>Partenariats entreprises, levée de fonds pour les events, gestion des relations externes.</p>
+                        <div class="cell-tags">
+                            <span class="ctag">B2B</span><span class="ctag">Networking</span>
+                            <span class="ctag">Pitching</span><span class="ctag">Finance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Events -->
+                <div class="cell c-events reveal d8">
+                    <div class="cell-shine"></div>
+                    <div class="cell-body">
+                        <div class="cell-icon"><i class="bi bi-calendar-event"></i></div>
+                        <h3>Events</h3>
+                        <p>Organisation des événements du club : IDEH, Integration, T2D, formations et workshops.</p>
+                        <div class="cell-tags">
+                            <span class="ctag">IDEH</span><span class="ctag">T2D</span>
+                            <span class="ctag">Intégration</span><span class="ctag">Logistics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     EVENTS (highlights)
+     ══════════════════════════════════════════════════════════════════ -->
+    <section id="events">
+        <div class="container">
+            <div class="s-head">
+                <span class="s-kicker reveal">Événements phares</span>
+                <h2 class="s-title reveal d1">Ce que le <span class="acc">CIT</span> fait</h2>
+                <div class="s-line reveal d1"></div>
+                <p class="s-desc reveal d2">
+                    Des compétitions nationales aux intégrations — le CIT ne s'arrête jamais.
+                </p>
+            </div>
+
+            <div class="events-grid">
+
+                <div class="ev-card reveal d1">
+                    <span class="ev-yr">Flagship Event</span>
+                    <h4>IDEH — Inter-INPT Data &amp; Ethical Hacking</h4>
+                    <p>Le grand événement annuel du CIT : compétition CTF + Data Challenge ouverte aux grandes écoles du
+                        Maroc. IDEH 2024 a rassemblé des équipes de tout le pays.</p>
+                    <span class="ev-emoji">🔐</span>
+                </div>
+
+                <div class="ev-card reveal d2">
+                    <span class="ev-yr">2026</span>
+                    <h4>Ramada League</h4>
+                    <p>Compétition nocturne pendant Ramadan : CP (Competitive Programming), CTF &amp; Data Challenge
+                        battle. "Even Ramadan nights hit different when you're in the zone."</p>
+                    <span class="ev-emoji">🌙</span>
+                </div>
+
+                <div class="ev-card reveal d3">
+                    <span class="ev-yr">Récurrent</span>
+                    <h4>T2D — Training To Dominate</h4>
+                    <p>Sessions d'entraînement intensif pour les compétitions : algorithmique, sécurité, data. On
+                        prépare nos équipes à dominer.</p>
+                    <span class="ev-emoji">⚡</span>
+                </div>
+
+                <div class="ev-card reveal d4">
+                    <span class="ev-yr">Récurrent</span>
+                    <h4>Integration INPT</h4>
+                    <p>Événement d'intégration des nouvelles promotions organisé par la cellule Events du CIT.
+                        Découverte du club, challenges fun et networking.</p>
+                    <span class="ev-emoji">🤝</span>
+                </div>
+
+                <div class="ev-card reveal d5">
+                    <span class="ev-yr">Récurrent</span>
+                    <h4>Formations &amp; Workshops</h4>
+                    <p>Workshops pratiques organisés par chaque cellule : Docker, pentest initiation, ML hands-on,
+                        design sprint, et bien plus.</p>
+                    <span class="ev-emoji">📚</span>
+                </div>
+
+                <div class="ev-card reveal d6">
+                    <span class="ev-yr">2024</span>
+                    <h4>CTF Author — CIT Challenge</h4>
+                    <p>Le CIT comme créateur de challenges CTF pour des compétitions inter-écoles. Notre cellule
+                        CyberSécurité conçoit les épreuves.</p>
+                    <span class="ev-emoji">🛡️</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     TEAM
+     ══════════════════════════════════════════════════════════════════ -->
+    <section id="team">
+        <div class="container">
+            <div class="s-head">
+                <span class="s-kicker reveal">L'équipe dirigeante</span>
+                <h2 class="s-title reveal d1">Ceux qui font <span class="acc">vivre</span> le CIT</h2>
+                <div class="s-line reveal d1"></div>
+                <p class="s-desc reveal d2">
+                    Étudiants passionnés, leaders de leurs cellules, bâtisseurs d'une communauté IT.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="tm-card reveal d1">
+                    <div class="tm-av"><img src="team/president.png" alt="Aamoum Ilyass"></div>
+                    <div class="tm-name">Aamoum Ilyass</div>
+                    <div class="tm-role">Président</div>
+                </div>
+                <div class="tm-card reveal d2">
+                    <div class="tm-av"><img src="team/vp.png" alt="Sihami Imane"></div>
+                    <div class="tm-name">Sihami Imane</div>
+                    <div class="tm-role">Vice-Présidente</div>
+                </div>
+                <div class="tm-card reveal d3">
+                    <div class="tm-av"><img src="team/treasurer.png" alt="Id Aissa Farid"></div>
+                    <div class="tm-name">Id Aissa Farid</div>
+                    <div class="tm-role">Trésorier</div>
+                </div>
+                <div class="tm-card reveal d4">
+                    <div class="tm-av"><img src="team/secretary.png" alt="Lachguer Mouad"></div>
+                    <div class="tm-name">Lachguer Mouad</div>
+                    <div class="tm-role">Secrétaire Général</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     CONTACT
+     ══════════════════════════════════════════════════════════════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="s-head">
+                <span class="s-kicker reveal">Nous contacter</span>
+                <h2 class="s-title reveal d1">On est là <span class="acc">pour toi</span></h2>
+                <div class="s-line reveal d1"></div>
+                <p class="s-desc reveal d2">
+                    Question, partenariat ou tu veux juste rejoindre l'aventure ?
+                </p>
+            </div>
+
+            <div class="contact-wrap">
+
+                <!-- Info -->
+                <div class="reveal d1">
+                    <h3>Contact</h3>
+                    <p>Retrouve-nous sur le campus INPT ou écris-nous directement. On répond vite.</p>
+
+                    <div class="c-block">
+                        <div class="c-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div class="c-text">
+                            <h5>Adresse</h5>
+                            <p>INPT Avenue Allal El Fassi, Rabat, Morocco</p>
+                        </div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div class="c-text">
+                            <h5>Email</h5>
+                            <p><a href="mailto:cit.inpt@gmail.com">cit.inpt@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div class="c-text">
+                            <h5>Téléphone</h5>
+                            <p>0650-215408</p>
+                        </div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon"><i class="bi bi-instagram"></i></div>
+                        <div class="c-text">
+                            <h5>Instagram</h5>
+                            <p><a href="https://www.instagram.com/cit.inpt/" target="_blank">@cit.inpt</a> — 3,144
+                                followers
+                            </p>
+                        </div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon"><i class="bi bi-facebook"></i></div>
+                        <div class="c-text">
+                            <h5>Facebook</h5>
+                            <p><a href="https://www.facebook.com/CIT.INPT?locale=fr_FR" target="_blank">CIT — INPT</a> —
+                                7,1K followers</p>
+                        </div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon"><i class="bi bi-linkedin"></i></div>
+                        <div class="c-text">
+                            <h5>LinkedIn</h5>
+                            <p><a href="https://www.linkedin.com/company/cit-inpt/?originalSubdomain=ma"
+                                    target="_blank">CIT INPT</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="c-form-box reveal d2">
+                    <form id="cForm" novalidate>
+                        <div class="f-row">
+                            <div class="fg">
+                                <label class="flabel">Nom complet</label>
+                                <input class="finput" type="text" placeholder="Ton nom…" required />
+                            </div>
+                            <div class="fg">
+                                <label class="flabel">Email</label>
+                                <input class="finput" type="email" placeholder="toi@example.com" required />
+                            </div>
+                        </div>
+                        <div class="fg">
+                            <label class="flabel">Sujet</label>
+                            <input class="finput" type="text" placeholder="De quoi s'agit-il ?" />
+                        </div>
+                        <div class="fg">
+                            <label class="flabel">Message</label>
+                            <textarea class="finput" rows="5" placeholder="Ton message…" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">
+                            <i class="bi bi-send-fill"></i>&nbsp; Envoyer
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <div class="foot-inner">
+                <div class="foot-brand">CIT &nbsp;<span>INPT</span></div>
+                <div class="foot-copy">&copy; 2026 Club Informatique &amp; Télécom — INPT Rabat</div>
+                <div class="foot-socials">
+                    <a href="https://www.instagram.com/cit.inpt/" target="_blank" title="Instagram"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/CIT.INPT?locale=fr_FR" target="_blank" title="Facebook"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/cit-inpt/?originalSubdomain=ma" target="_blank"
+                        title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

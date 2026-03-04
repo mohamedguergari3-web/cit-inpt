@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INPT Student Registration</title>
+    <link rel="stylesheet" href="indexCSS.css">
+</head>
+<body>
+
+<header>
+    <h1>INPT Student Registration Form</h1>
+    <p>Please fill in your profile and academic information</p>
+</header>
+
+<main>
+    <form id="registrationForm">
+
+        <!-- PROFILE INFORMATION -->
+        <fieldset>
+            <legend>Profile Information</legend>
+
+            <label>
+                Full Name:
+                <input type="text" name="fullName" placeholder="Hassan Farsi" required>
+            </label>
+
+            <label>
+                Email:
+                <input type="email" name="email" required>
+            </label>
+
+            <label>
+                Password:
+                <input type="password" name="password" minlength="8" required>
+            </label>
+
+            <label>
+                Date of Birth:
+                <input type="date" name="dob" required>
+            </label>
+
+            <label>
+                Phone Number:
+                <input type="tel" name="phone" placeholder="+212 6XXXXXXXX" required>
+            </label>
+
+            <label>
+                Gender:
+                <select name="gender">
+                    <option value="">-- Select --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </label>
+
+            <label>
+                Upload Profile Picture:
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </label>
+
+            <img id="photoPreview" alt="Profile preview">
+
+        </fieldset>
+
+        <!-- STUDENT INFORMATION -->
+        <fieldset>
+            <legend>Student Information</legend>
+
+            <label>
+                Student ID:
+                <input type="number" name="studentId" required>
+            </label>
+
+            <label>
+                Cycle:
+                <input type="radio" name="cycle" value="engineering"> Engineering
+                <input type="radio" name="cycle" value="master"> Master
+            </label>
+
+            <label>
+                sector:
+                <select name="department">
+                    <option value="AMOA">AMOA</option>
+                    <option value="ASEDS">AMOA</option>
+                    <option value="DATA">DATA</option>
+                    <option value="ICCN">ICCN</option>
+                    <option value="SESNUM">SESNUM</option>
+                    <option value="SMART">SMART</option>
+                    <option value="SUD" selected>SUD</option>
+                </select>
+            </label>
+
+            <label>
+                Skills:
+                <input type="checkbox" name="skills" value="html"> HTML
+                <input type="checkbox" name="skills" value="css"> CSS
+                <input type="checkbox" name="skills" value="js"> JavaScript
+            </label>
+
+            <label>
+                Favorite Professor:
+                <select id="professor">
+                    <option value="Hassan-Farsi" selected>Hassan Farsi</option>
+                    <option value="Other professor">Other professor</option>
+                    <option value="You">You</option>
+                </select>
+            </label>
+
+            <label>
+                Level of Satisfaction with INPT:
+                <input type="range" min="1" max="10">
+            </label>
+
+            <label>
+                Additional Notes:
+                <textarea rows="4" placeholder="Your message..."></textarea>
+            </label>
+        </fieldset>
+
+        <!-- TERMS -->
+        <label class="terms">
+            <input type="checkbox" required>
+            I accept the terms and conditions
+        </label>
+
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</main>
+
+<footer>
+    <small>© 2026 INPT - All rights reserved</small>
+</footer>
+
+<script src="indexJS.js"></script>
+</body>
+</html>
